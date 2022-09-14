@@ -50,7 +50,7 @@ const WorkoutScreen = () => {
                                 {item.name}
                             </Text>
                             <Text style={{ marginTop: 4, fontSize: 20 }}>
-                                x{item.sets}
+                                {item.sets}
                             </Text>
                         </View>
                     </Pressable>
@@ -58,6 +58,11 @@ const WorkoutScreen = () => {
             </ScrollView>
 
             <Pressable
+                onPress={() =>
+                    navigation.navigate("Fit", {
+                        excersises: route.params.excersises,
+                    })
+                }
                 style={{
                     backgroundColor: "#0E6BA8",
                     padding: 10,
