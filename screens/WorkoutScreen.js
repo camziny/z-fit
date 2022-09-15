@@ -32,7 +32,7 @@ const WorkoutScreen = () => {
                     size={30}
                 />
 
-                {route.params.excersises.map((item, index) => (
+                {route.params.exercises.map((item, index) => (
                     <Pressable
                         style={{
                             margin: 10,
@@ -60,7 +60,7 @@ const WorkoutScreen = () => {
             <Pressable
                 onPress={() =>
                     navigation.navigate("Fit", {
-                        excersises: route.params.excersises,
+                        exercises: route.params.exercises,
                     })
                 }
                 style={{
@@ -78,7 +78,7 @@ const WorkoutScreen = () => {
                         textAlign: "center",
                         color: "white",
                         fontSize: 15,
-                        fontWeight: 700,
+                        fontWeight: "700",
                     }}
                 >
                     START

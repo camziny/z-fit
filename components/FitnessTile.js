@@ -14,7 +14,7 @@ const FitnessTile = () => {
                     onPress={() =>
                         navigation.navigate("Workout", {
                             image: item.image,
-                            excersises: item.excersises,
+                            exercises: item.exercises,
                             id: item.id,
                         })}
                     style={{

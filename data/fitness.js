@@ -4,7 +4,7 @@ export default [
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrEM-6gDUO7g1cdrNhBaqk_0nwxy6ILlIqsQ&usqp=CAU",
         name: "FULL BODY",
         description: "7x4 CHALLENGE",
-        excersises: [
+        exercises: [
             {
                 id: "10",
                 image: "https://sworkit.com/wp-content/uploads/2020/06/sworkit-jumping-jack.gif",
@@ -48,7 +48,7 @@ export default [
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRonpSjpGQ2-JD8-XFFD7LYsVSFCOiASj0wSOq1qxNvxGFHe7W6AU1LRAeJ2fOIzYICMGc&usqp=CAU",
         name: "ABS BEGINNER",
         description: "7x4 CHALLENGE",
-        excersises: [
+        exercises: [
             {
                 id: "90",
                 image: "https://media1.popsugar-assets.com/files/thumbor/f2sbzQY1h1zqiGEV9Mhr1IAcFMU/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2017/03/13/796/n/1922729/19cf2a4428446429_EXAMPLE.crossjacks.gif",
@@ -86,7 +86,7 @@ export default [
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1NHvoutGn-Vr_uwVbOOtezhENvx9jhV6pfQ&usqp=CAU",
         name: "ARM BEGINNER",
         description: "7x4 CHALLENGE",
-        excersises: [
+        exercises: [
             {
                 id: "70",
                 image: "https://post.healthline.com/wp-content/uploads/2020/06/400x400_How_to_do_Zac_Efrons_Baywatch_Workout_Dumbbell_Lateral_Raise.gif",
@@ -136,7 +136,7 @@ export default [
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqCT0tewpNAZ6R9JUoMDHIHGnpE44U2Fl1Zw&usqp=CAU",
         name: "CHEST BEGINNER",
         description: "7x4 CHALLENGE",
-        excersises: [
+        exercises: [
             {
                 id: "20",
                 image: "https://i.pinimg.com/originals/ff/cf/40/ffcf40474f0758dfedebc823f5532aa1.gif",

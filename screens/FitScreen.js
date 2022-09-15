@@ -7,13 +7,14 @@ import {
     Pressable,
 } from "react-native";
 import React, { useState } from "react";
-import { useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 const FitScreen = () => {
     const route = useRoute();
+    const navigation = useNavigation();
     const [index, setIndex] = useState(0);
-    const excersises = route.params.excersises;
-    const current = excersises[index];
+    const exercise = route.params.exercises;
+    const current = exercise[index];
     return (
         <SafeAreaView>
             <Image
@@ -29,8 +30,7 @@ const FitScreen = () => {
                     fontWeight: "bold",
                 }}
             >
-                {" "}
-                {current.name}{" "}
+                {current.name}
             </Text>
             <Text
                 style={{
@@ -43,27 +43,148 @@ const FitScreen = () => {
             >
                 {current.sets}
             </Text>
-            <Pressable
-                style={{
-                    backgroundColor: "#0E6BA8",
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                    marginTop: 20,
-                    borderRadius: 10,
-                    padding: 10,
-                }}
-            >
-                <Text
+            {index + 1 >= exercise.length ? (
+                <Pressable
+                    onPress={() => {
+                        navigation.navigate("Home");
+                    }}
                     style={{
-                        textAlign: "center",
-                        fontWeight: "bold",
-                        fontSize: 20,
-                        width: 120,
-                        color: "white",
+                        backgroundColor: "#0E6BA8",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                        marginTop: 20,
+                        borderRadius: 10,
+                        padding: 10,
                     }}
                 >
-                    Complete
-                </Text>
+                    <Text
+                        style={{
+                            textAlign: "center",
+                            fontWeight: "bold",
+                            fontSize: 20,
+                            width: 120,
+                            color: "white",
+                        }}
+                    >
+                        Done
+                    </Text>
+                </Pressable>
+            ) : (
+                <Pressable
+                    onPress={() => {
+                        navigation.navigate("Rest");
+                        setTimeout(() => {
+                            setIndex(index + 1);
+                        }, 2000);
+                    }}
+                    style={{
+                        backgroundColor: "#0E6BA8",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                        marginTop: 20,
+                        borderRadius: 10,
+                        padding: 10,
+                    }}
+                >
+                    <Text
+                        style={{
+                            textAlign: "center",
+                            fontWeight: "bold",
+                            fontSize: 20,
+                            width: 120,
+                            color: "white",
+                        }}
+                    >
+                        Complete
+                    </Text>
+                </Pressable>
+            )}
+
+            <Pressable
+                style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    marginTop: 60,
+                }}
+            >
+                <Pressable
+                    disabled={index === 0}
+                    onPress={() => {
+                        navigation.navigate("Rest")
+                        setTimeout(() => {
+                            setIndex(index - 1)
+                        }, 2000)
+                    }}
+                    style={{
+                        backgroundColor: "#21325E",
+                        padding: 15,
+                        borderRadius: 30,
+                        marginHorizontal: 40,
+                        width: 100,
+                    }}
+                >
+                    <Text
+                        style={{
+                            color: "white",
+                            fontWeight: "bold",
+                            textAlign: "center",
+                        }}
+                    >
+                        Back
+                    </Text>
+                </Pressable>
+                {index + 1 >= exercise.length ? (
+                    <Pressable
+                    onPress={() => {
+                        navigation.navigate("Home");
+                    }}
+                        style={{
+                            backgroundColor: "#21325E",
+                            padding: 15,
+                            borderRadius: 30,
+                            marginHorizontal: 40,
+                            width: 100,
+                        }}
+                    >
+                        <Text
+                            style={{
+                                color: "white",
+                                fontWeight: "bold",
+                                textAlign: "center",
+                            }}
+                        >
+                            Next
+                        </Text>
+                    </Pressable>
+                ) : (
+                    <Pressable
+                    onPress={() => {
+                        navigation.navigate("Rest");
+                        setTimeout(() => {
+                            setIndex(index + 1);
+                        }, 2000);
+                    }}
+                        style={{
+                            backgroundColor: "#21325E",
+                            padding: 15,
+                            borderRadius: 30,
+                            marginHorizontal: 40,
+                            width: 100,
+                        }}
+                    >
+                        <Text
+                            style={{
+                                color: "white",
+                                fontWeight: "bold",
+                                textAlign: "center",
+                            }}
+                        >
+                            Next
+                        </Text>
+                    </Pressable>
+                )}
             </Pressable>
         </SafeAreaView>
     );
