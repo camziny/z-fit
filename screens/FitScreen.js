@@ -6,8 +6,9 @@ import {
     Image,
     Pressable,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
+import { FitnessItems } from "../Context";
 
 const FitScreen = () => {
     const route = useRoute();
@@ -15,6 +16,16 @@ const FitScreen = () => {
     const [index, setIndex] = useState(0);
     const exercise = route.params.exercises;
     const current = exercise[index];
+    const {
+        completed,
+        setCompleted,
+        workout,
+        setWorkout,
+        minutes,
+        setMinutes,
+        calories,
+        setCalories,
+    } = useContext(FitnessItems);
     return (
         <SafeAreaView>
             <Image
@@ -73,6 +84,10 @@ const FitScreen = () => {
                 <Pressable
                     onPress={() => {
                         navigation.navigate("Rest");
+                        setCompleted([...completed, current.name]);
+                        setWorkout(workout + 1);
+                        setMinutes(minutes + 3);
+                        setCalories(calories + 6);
                         setTimeout(() => {
                             setIndex(index + 1);
                         }, 2000);
@@ -112,10 +127,10 @@ const FitScreen = () => {
                 <Pressable
                     disabled={index === 0}
                     onPress={() => {
-                        navigation.navigate("Rest")
+                        navigation.navigate("Rest");
                         setTimeout(() => {
-                            setIndex(index - 1)
-                        }, 2000)
+                            setIndex(index - 1);
+                        }, 2000);
                     }}
                     style={{
                         backgroundColor: "#21325E",
@@ -137,9 +152,9 @@ const FitScreen = () => {
                 </Pressable>
                 {index + 1 >= exercise.length ? (
                     <Pressable
-                    onPress={() => {
-                        navigation.navigate("Home");
-                    }}
+                        onPress={() => {
+                            navigation.navigate("Home");
+                        }}
                         style={{
                             backgroundColor: "#21325E",
                             padding: 15,
@@ -160,12 +175,12 @@ const FitScreen = () => {
                     </Pressable>
                 ) : (
                     <Pressable
-                    onPress={() => {
-                        navigation.navigate("Rest");
-                        setTimeout(() => {
-                            setIndex(index + 1);
-                        }, 2000);
-                    }}
+                        onPress={() => {
+                            navigation.navigate("Rest");
+                            setTimeout(() => {
+                                setIndex(index + 1);
+                            }, 2000);
+                        }}
                         style={{
                             backgroundColor: "#21325E",
                             padding: 15,
