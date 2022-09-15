@@ -10,10 +10,10 @@ const HomeScreen = () => {
         calories,
     } = useContext(FitnessItems);
     return (
-        <ScrollView style={{marginTop: 50, backgroundColor: "#A6E1FA"}}>
+        <ScrollView style={{marginTop: 50, backgroundColor: "#E8E8E8"}}>
             <View
                 style={{
-                    backgroundColor: "#A6E1FA",
+                    backgroundColor: "#E8E8E8",
                     padding: 10,
                     height: 200,
                     width: "100%",
@@ -28,6 +28,20 @@ const HomeScreen = () => {
                 >
                     Home
                 </Text>
+
+                <View style={{ justifyContent: "center", alignItems: "center"}}>
+                    <Image 
+                    style={{
+                        width: "90%",
+                        height: 120,
+                        marginTop: 20,
+                        borderRadius: 7,
+                    }}
+                    source={{
+                        uri: "https://i.postimg.cc/3JQjnL97/zfit.png",
+                    }}
+                    />
+                </View>
 
                 <View
                     style={{
@@ -99,20 +113,6 @@ const HomeScreen = () => {
                             Minutes
                         </Text>
                     </View>
-                </View>
-
-                <View style={{ justifyContent: "center", alignItems: "center"}}>
-                    <Image 
-                    style={{
-                        width: "90%",
-                        height: 120,
-                        marginTop: 20,
-                        borderRadius: 7,
-                    }}
-                    source={{
-                        uri: "https://i.postimg.cc/3JQjnL97/zfit.png",
-                    }}
-                    />
                 </View>
                 <FitnessTile />
             </View>
