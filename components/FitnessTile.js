@@ -25,7 +25,7 @@ const FitnessTile = () => {
                     key={key}
                 >
                     <Image
-                        style={{ width: "95%", height: 140, borderRadius: 7 }}
+                        style={{ width: "95%", height: 140, borderRadius: 10}}
                         source={{ uri: item.image }}
                     />
                     <Text

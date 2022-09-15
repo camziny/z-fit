@@ -170,7 +170,7 @@ const FitScreen = () => {
                                 textAlign: "center",
                             }}
                         >
-                            Next
+                            Skip
                         </Text>
                     </Pressable>
                 ) : (
@@ -196,7 +196,7 @@ const FitScreen = () => {
                                 textAlign: "center",
                             }}
                         >
-                            Next
+                            Skip
                         </Text>
                     </Pressable>
                 )}
