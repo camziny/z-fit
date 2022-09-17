@@ -4,7 +4,7 @@
     "slug": "z-fit",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/zfitLogo",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
