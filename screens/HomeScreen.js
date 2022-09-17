@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, SafeAreaView, Image, ScrollView } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Image, ScrollView, StatusBar } from "react-native";
 import React, { useContext } from "react";
 import FitnessTile from "../components/FitnessTile";
 import { FitnessItems } from "../Context";
@@ -10,12 +10,13 @@ const HomeScreen = () => {
         calories,
     } = useContext(FitnessItems);
     return (
-        <ScrollView style={{marginTop: 50, backgroundColor: "#E8E8E8"}}>
+        <View style={{padding: 10, flex: 1}}>
+        <ScrollView style={{flex: 5, marginTop: 50, backgroundColor: "#E8E8E8"}}>
             <View
                 style={{
                     backgroundColor: "#E8E8E8",
                     padding: 10,
-                    height: 200,
+                    height: 1100,
                     width: "100%",
                 }}
             >
@@ -114,12 +115,24 @@ const HomeScreen = () => {
                         </Text>
                     </View>
                 </View>
-                <FitnessTile />
+                <FitnessTile/>
             </View>
         </ScrollView>
+    </View>
     );
 };
 export default HomeScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    container: {
+      flex: 10,
+      paddingTop: StatusBar.currentHeight,
+    },
+    scrollView: {
+        flex: 1, marginTop: 50, backgroundColor: "#E8E8E8"
+    },
+    text: {
+      fontSize: 42,
+    },
+  });
 

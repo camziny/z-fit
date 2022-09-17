@@ -56,7 +56,7 @@ const WorkoutScreen = () => {
                                 {item.name}
                             </Text>
                             <Text style={{ marginTop: 4, fontSize: 20 }}>
-                                {item.sets}
+                                {item.sets} reps
                             </Text>
                         </View>
                         {completed.includes(item.name) ? (
