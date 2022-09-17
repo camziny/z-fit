@@ -28,8 +28,33 @@ const FitScreen = () => {
     } = useContext(FitnessItems);
     return (
         <SafeAreaView>
+            <Pressable
+                onPress={() => {
+                    navigation.navigate("Home");
+                }}
+                style={{
+                    backgroundColor: "#21325E",
+                    padding: 15,
+                    borderRadius: 30,
+                    width: 100,
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                }}
+            >
+                <Text
+                    style={{
+                        textAlign: "center",
+                        fontWeight: "bold",
+                        fontSize: 20,
+                        width: 70,
+                        color: "white",
+                    }}
+                >
+                    Home
+                </Text>
+            </Pressable>
             <Image
-                style={{ width: "100%", height: 370 }}
+                style={{ width: "100%", height: 370, marginTop: 20 }}
                 source={{ uri: current.image }}
             />
             <Text

@@ -27,7 +27,7 @@ export default [
                 id: "13",
                 image: "https://c.tenor.com/DwuD868X1OUAAAAC/side-lunge.gif",
                 name: "LATERAL LUNGES",
-                sets: 12,
+                sets: 24,
             },
             {
                 id: "14",
@@ -39,7 +39,7 @@ export default [
                 id: "15",
                 image: "https://media1.popsugar-assets.com/files/thumbor/Iu8waoj6rmL6c7B8gZUdS1ZIa3I/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2017/06/08/791/n/1922729/c4943793a2ba2dd5_SlowerClimbers.gif",
                 name: "MOUNTAIN CLIMBERS",
-                sets: 10,
+                sets: 30,
             },
         ],
     },
